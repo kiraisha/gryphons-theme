@@ -1,0 +1,131 @@
+@use "bootstrap/scss/bootstrap" as * with (
+  $info: #5c728f
+);
+
+@use "includes/components/table";
+@use "includes/components/jumbotron";
+@use "includes/components/challenge";
+@use "includes/components/sticky-footer";
+@use "includes/components/graphs";
+
+@use "includes/utils/fonts";
+@use "includes/utils/opacity";
+@use "includes/utils/min-height";
+@use "includes/utils/cursors";
+@use "includes/utils/lolight";
+
+@use "includes/icons/award-icons";
+@use "includes/icons/flag-icons";
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-purple: #8A2BE2;
+  --primary-blue: #4B0082;
+  --neon-purple: #b829ff;
+  --dark-blue: #1a1a2e;
+  --light-purple: #e0b0ff;
+  --gradient-bg: linear-gradient(135deg, #2a1b3d 0%, #1a1b3d 100%);
+}
+
+h1,
+h2 {
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+blockquote {
+  border-left: 4px solid $secondary;
+  padding-left: 15px;
+}
+
+input,
+select,
+button {
+  padding: 0.6rem !important;
+  height: auto !important;
+}
+
+.fa-spin.spinner {
+  text-align: center;
+  opacity: 0.5;
+}
+
+.badge-notification {
+  vertical-align: top;
+  margin-left: -1.5em;
+  font-size: 50%;
+}
+
+.form-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e");
+  background-size: 8px 10px;
+}
+
+.bg-image {
+  background: var(--gradient-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.2);
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-content {
+  font-family: 'Orbitron', sans-serif;
+  background: rgb(26, 27, 46);
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(184, 41, 255, 0.15);
+}
+
+.nav-tabs .nav-link.active {
+  background-color: rgb(26, 27, 46);
+  box-shadow: 0 0 30px rgba(184, 41, 255, 0.15);
+}
+
+.tab-content thead tr th {
+  background-color: rgb(26, 27, 46);
+}
+.tab-content tbody tr td {
+  background-color: rgb(26, 27, 46);
+}
+.challenge-input {
+  font-family: 'Source Code Pro', monospace;
+  color: #e0b0ff;
+}
+
+.challenge-connection-info {
+  font-family: 'Source Code Pro', monospace;
+  color: #b829ff;
+}
+
+.challenge-name {
+  text-shadow: 0 0 10px #b829ff;
+}
+.challenge-value {
+  text-shadow: 0 0 15px #8A2BE2;
+}
+.challenge-desc {
+  font-family: 'Source Code Pro', monospace;
+}
+
+.glow-text {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow:  0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--primary-purple),
+                  0 0 20px var(--primary-purple), 0 0 25px var(--primary-purple);
+  }
+  to {
+    text-shadow:  0 0 10px #fff, 0 0 20px #fff, 0 0 30px var(--primary-purple),
+                  0 0 40px var(--primary-purple), 0 0 50px var(--primary-purple);
+  }
+}
